@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacecraft and Planets</title>
+</head>
+<body>
+    <h1>Spacecraft and Planets</h1>
+
+    <h2>Planets</h2>
+    <ul>
+        {% for planet in planets %}
+            <li>{{ planet.name }} - {{ planet.description }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Spacecraft</h2>
+    <ul>
+        {% for spacecraft in spacecrafts %}
+            <li>{{ spacecraft.name }} - {{ spacecraft.mission_description }} (Planet: {{ spacecraft.planet.name }})</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{{ url_for('create_planet') }}">Create a New Planet</a></p>
+    <p><a href="{{ url_for('create_spacecraft') }}">Create a New Spacecraft</a></p>
+</body>
+</html>

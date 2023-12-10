@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Planet</title>
+</head>
+<body>
+    <h1>Create a New Planet</h1>
+
+    <form action="{{ url_for('create_planet') }}" method="post">
+        <label for="planet_name">Planet Name:</label>
+        <input type="text" id="planet_name" name="planet_name" required>
+
+        <label for="planet_description">Planet Description:</label>
+        <textarea id="planet_description" name="planet_description" rows="4" required></textarea>
+
+        <button type="submit">Create Planet</button>
+    </form>
+
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>
