@@ -1,0 +1,7 @@
+<!-- myapp/templates/myapp/modify_data.html -->
+<form method="post" action="{% if employee.id %}{% url 'modify_data' employee.id %}{% endif %}">
+    {% csrf_token %}
+    {{ employee_form.as_p }}
+    {{ position_form.as_p }}
+    <input type="submit" value="Modify Data">
+</form>

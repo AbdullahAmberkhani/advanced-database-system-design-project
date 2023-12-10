@@ -1,0 +1,7 @@
+<!-- myapp/templates/myapp/add_data.html -->
+<form method="post" action="{% url 'add_data' %}">
+    {% csrf_token %}
+    {{ employee_form.as_p }}
+    {{ position_form.as_p }}
+    <input type="submit" value="Add Data">
+</form>
